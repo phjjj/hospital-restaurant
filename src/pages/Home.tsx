@@ -1,12 +1,35 @@
 import styled from "styled-components";
+import Title from "../components/common/Title";
+import Button from "../components/common/Button";
 
 function Home() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <HomeStyle>
+      <Title size="large" color="primary">
+        병원맛집
+      </Title>
+      <div className="img">
+        <img src={"/src/assets/img/home.png"} />
+      </div>
+      <Button size="large" schema="primary">
+        시작하기
+      </Button>
+    </HomeStyle>
   );
 }
-const HomeStyle = styled.div``;
+const HomeStyle = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 100vh;
+  .img {
+    width: 305px;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+`;
 
 export default Home;
