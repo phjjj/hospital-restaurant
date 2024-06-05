@@ -136,19 +136,17 @@ const ResultStyle = styled.div`
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  p {
-    font-weight: 700;
-    font-size: 1.4rem;
-  }
 
   ul {
     overflow: hidden;
-    max-height: 600px;
+    max-height: 400px;
     overflow-y: auto;
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
-    padding: 0 10px;
+    padding: 10px 10px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
   }
 `;
 

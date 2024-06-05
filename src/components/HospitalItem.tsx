@@ -11,21 +11,24 @@ function HospitalItem({ hospital }: Props) {
   return (
     <HospitalItemStyle>
       <div className="info">
-        <Title size="small" color="primary">
-          영업중
-        </Title>
-        <h1 className="hospital-name">{hospital.name}</h1>
-        <span>{hospital.distance}</span>
-        <div className="img">
-          <img src="/src/assets/img/star.png" />
+        <label>영업중</label>
+        <h4>
+          {hospital.name} {hospital.distance}
+        </h4>
+
+        <div className="grade">
+          <div className="img">
+            <img src="/src/assets/img/star.png" />
+          </div>
+          <span>{hospital.grade}</span>
         </div>
-        <span>{hospital.grade}</span>
+
         <span className="medal">{medal[hospital.rank - 1]}</span>
       </div>
 
-      <div className="info">
-        <h1>상세 주소</h1>
-        <span>{hospital.location}</span>
+      <div className="address">
+        <span>상세 주소</span>
+        <p>{hospital.location}</p>
       </div>
     </HospitalItemStyle>
   );
@@ -37,27 +40,55 @@ const HospitalItemStyle = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 19px;
+  padding: 20px;
+  width: 100%;
+  gap: 10px;
+  // 애니베이션
+  transition: 0.3s;
+  &:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
   .info {
     display: flex;
     align-items: center;
     gap: 20px;
-  }
-  h1 {
-    font-size: 1.1rem;
-    font-weight: 700;
-  }
+    @media screen and (max-width: 400px) {
+      gap: 10px;
+    }
 
-  .img {
-    width: 20px;
-    height: auto;
-    img {
-      width: 100%;
+    label {
+      color: ${({ theme }) => theme.colors.primary};
+      font-weight: 700;
+    }
+    .grade {
+      display: flex;
+      gap: 5px;
+      font-weight: 700;
+      .img {
+        width: 20px;
+        height: auto;
+        img {
+          width: 100%;
+        }
+      }
     }
   }
+  .address {
+    display: flex;
+    span {
+      white-space: nowrap;
+      font-weight: 700;
+    }
+    font-size: 0.9rem;
+    gap: 5px;
+    color: #6c757d;
+  }
+
   .medal {
     position: absolute;
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     right: 10px;
     top: -8px;
   }

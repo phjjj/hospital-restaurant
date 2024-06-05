@@ -25,6 +25,12 @@ const DepartmentItemStyle = styled(Button)`
   padding: 20px 20px;
   font-size: ${({ theme }) => theme.button.medium.fontSize};
   font-weight: 600;
+
+  &:hover {
+    transition: 0.3s;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: white;
+  }
 `;
 
 export default DepartmentItem;

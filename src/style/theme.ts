@@ -23,9 +23,9 @@ export const defaultTheme: Theme = {
   },
   borderRadius: { default: "10px" },
   button: {
-    large: { fontSize: "1.5rem", padding: "20px 150px" },
-    medium: { fontSize: "1rem", padding: "20px 100px" },
-    small: { fontSize: "0.75rem", padding: "20px 50px" },
+    large: { fontSize: "1.5rem", padding: "20px 50px" },
+    medium: { fontSize: "1rem", padding: "20px 40px" },
+    small: { fontSize: "0.75rem", padding: "20px 10px" },
   },
   buttonSchema: {
     primary: { color: "white", backgroundColor: "#007bff" },

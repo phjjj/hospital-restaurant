@@ -57,7 +57,7 @@ function Select() {
         ))}
       </div>
       <Link to={"/result"}>
-        <Button size="medium" schema={selected ? "primary" : "secondary"} disabled={!selected}>
+        <Button size="large" schema={selected ? "primary" : "secondary"} disabled={!selected}>
           다음 단계로
         </Button>
       </Link>
