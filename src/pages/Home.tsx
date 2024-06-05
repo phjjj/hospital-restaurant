@@ -26,10 +26,7 @@ const HomeStyle = styled.div`
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  height: 100vh;
-  @media screen and (max-device-height: 760px) {
-    height: calc(var(--vh, 1vh) * 100);
-  }
+  min-height: 100vh;
 
   .img {
     width: 305px;

@@ -135,11 +135,7 @@ const ResultStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-  @media screen and (max-device-height: 760px) {
-    height: calc(var(--vh, 1vh) * 100);
-  }
-
+  min-height: 100vh;
   p {
     font-weight: 700;
     font-size: 1.4rem;
