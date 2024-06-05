@@ -3,7 +3,7 @@ import Title from "../components/common/Title";
 import HospitalItem from "../components/HospitalItem";
 import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 export interface Hospital {
   id: number;
@@ -116,7 +116,9 @@ function Result() {
       <div className="content">
         <ul>
           {hospitals.map((hospital) => (
-            <HospitalItem hospital={hospital} />
+            <React.Fragment key={hospital.id}>
+              <HospitalItem key={hospital.id} hospital={hospital} />
+            </React.Fragment>
           ))}
         </ul>
       </div>
@@ -133,6 +135,10 @@ const ResultStyle = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  @media screen and (max-device-height: 760px) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
   p {
     font-weight: 700;

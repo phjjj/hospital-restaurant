@@ -6,6 +6,7 @@ import { GlobalStyle } from "./style/global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./style/theme";
 import Layout from "./components/Layout/Layout";
+import { useEffect } from "react";
 
 function App() {
   const router = createBrowserRouter([
@@ -29,12 +30,12 @@ function App() {
       path: "/result",
       element: (
         <Layout>
-          {" "}
-          <Result />{" "}
+          <Result />
         </Layout>
       ),
     },
   ]);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />

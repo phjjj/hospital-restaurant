@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Title from "../components/common/Title";
 import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 function Home() {
   return (
@@ -26,6 +27,10 @@ const HomeStyle = styled.div`
   justify-content: space-around;
   align-items: center;
   height: 100vh;
+  @media screen and (max-device-height: 760px) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
+
   .img {
     width: 305px;
     img {

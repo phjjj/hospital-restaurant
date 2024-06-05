@@ -73,6 +73,9 @@ const SelectStyle = styled.div`
   padding-bottom: 40px;
   gap: 20px;
   height: 100vh;
+  @media screen and (max-device-height: 760px) {
+    height: calc(var(--vh, 1vh) * 100);
+  }
 
   .explain {
     display: flex;
