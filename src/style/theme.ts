@@ -1,7 +1,7 @@
 export type ColorKey = "primary" | "secondary";
 export type HeadingSize = "large" | "medium" | "small";
 export type ButtonSize = "large" | "medium" | "small";
-export type ButtonSchema = "primary" | "secondary";
+export type ButtonSchema = "primary" | "secondary" | "third";
 
 interface Theme {
   colors: Record<ColorKey, string>;
@@ -30,5 +30,6 @@ export const defaultTheme: Theme = {
   buttonSchema: {
     primary: { color: "white", backgroundColor: "#007bff" },
     secondary: { color: "white", backgroundColor: "#6c757d" },
+    third: { color: "black", backgroundColor: "white" },
   },
 };

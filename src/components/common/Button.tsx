@@ -1,20 +1,22 @@
 import styled from "styled-components";
+import { ButtonSchema } from "../../style/theme";
 
-interface Props {
+interface Props extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   size: "small" | "medium" | "large";
-  schema: "primary" | "secondary";
+  schema: ButtonSchema;
   disabled?: boolean;
 }
 
-function Button({ children, size, schema, disabled }: Props) {
+function Button({ children, size, schema, disabled, ...props }: Props) {
   return (
-    <ButtonStyle size={size} schema={schema} disabled={disabled}>
+    <ButtonStyle size={size} schema={schema} disabled={disabled} {...props}>
       {children}
     </ButtonStyle>
   );
 }
-const ButtonStyle = styled.button<Omit<Props, "children">>`
+
+export const ButtonStyle = styled.button<Omit<Props, "children">>`
   font-size: ${({ size, theme }) => theme.button[size].fontSize};
   padding: ${({ size, theme }) => theme.button[size].padding};
   color: ${({ schema, theme }) => theme.buttonSchema[schema].color};

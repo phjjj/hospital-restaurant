@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Title from "../components/common/Title";
 import Button from "../components/common/Button";
+import { Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -11,9 +12,11 @@ function Home() {
       <div className="img">
         <img src={"/src/assets/img/home.png"} />
       </div>
-      <Button size="large" schema="primary">
-        시작하기
-      </Button>
+      <Link to="/select">
+        <Button size="large" schema="primary">
+          시작하기
+        </Button>
+      </Link>
     </HomeStyle>
   );
 }
