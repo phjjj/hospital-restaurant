@@ -36,6 +36,14 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition((position) => {
+      const { latitude, longitude } = position.coords;
+      localStorage.setItem("Latitude", latitude.toString());
+      localStorage.setItem("Longitude", longitude.toString());
+    });
+  }, []);
+
   return (
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
