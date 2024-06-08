@@ -1,9 +1,8 @@
 import styled from "styled-components";
-import { Hospital } from "../pages/Result";
-import Title from "./common/Title";
+import { FormatHospital } from "../model/hospital.model";
 
 interface Props {
-  hospital: Hospital;
+  hospital: FormatHospital;
 }
 const medal = ["🥇", "🥈", "🥉"];
 
@@ -11,24 +10,23 @@ function HospitalItem({ hospital }: Props) {
   return (
     <HospitalItemStyle>
       <div className="info">
-        <label>영업중</label>
         <h4>
-          {hospital.name} {hospital.distance}
+          {hospital.yadmNm} {hospital.distance}
         </h4>
 
         <div className="grade">
           <div className="img">
             <img src="/src/assets/img/star.png" />
           </div>
-          <span>{hospital.grade}</span>
+          <span>{hospital.rating}</span>
         </div>
 
-        <span className="medal">{medal[hospital.rank - 1]}</span>
+        <div className="medal">{medal[hospital.rank - 1]}</div>
       </div>
 
       <div className="address">
         <span>상세 주소</span>
-        <p>{hospital.location}</p>
+        <p>{hospital.addr}</p>
       </div>
     </HospitalItemStyle>
   );
