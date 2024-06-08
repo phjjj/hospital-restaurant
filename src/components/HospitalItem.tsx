@@ -21,7 +21,7 @@ function HospitalItem({ hospital }: Props) {
           <span>{hospital.rating}</span>
         </div>
 
-        <div className="medal">{medal[hospital.rank - 1]}</div>
+        {hospital.rank && <div className="medal">{medal[hospital.rank - 1]}</div>}
       </div>
 
       <div className="address">
