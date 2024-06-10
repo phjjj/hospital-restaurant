@@ -6,7 +6,8 @@ import { GlobalStyle } from "./style/global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./style/theme";
 import Layout from "./components/Layout/Layout";
-import { useEffect } from "react";
+import { Children, useEffect } from "react";
+import { NavermapsProvider } from "react-naver-maps";
 
 function App() {
   const router = createBrowserRouter([
@@ -45,10 +46,12 @@ function App() {
   }, []);
 
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <GlobalStyle />
-      <RouterProvider router={router} />
-    </ThemeProvider>
+    <NavermapsProvider ncpClientId={import.meta.env.VITE_NAVER_CLIENT_ID}>
+      <ThemeProvider theme={defaultTheme}>
+        <GlobalStyle />
+        <RouterProvider router={router} />
+      </ThemeProvider>
+    </NavermapsProvider>
   );
 }
 
