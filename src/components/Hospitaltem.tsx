@@ -1,36 +1,52 @@
 import styled from "styled-components";
-import { Hospital } from "../pages/Result";
-import Title from "./common/Title";
+import { FormatHospital } from "../model/hospital.model";
+import HospitalDetail from "./HospitalDetail";
+import { Suspense, useState } from "react";
 
 interface Props {
-  hospital: Hospital;
+  hospital: FormatHospital;
 }
 const medal = ["🥇", "🥈", "🥉"];
 
 function HospitalItem({ hospital }: Props) {
-  return (
-    <HospitalItemStyle>
-      <div className="info">
-        <label>영업중</label>
-        <h4>
-          {hospital.name} {hospital.distance}
-        </h4>
+  const [modal, setModal] = useState(false);
 
-        <div className="grade">
-          <div className="img">
-            <img src="/src/assets/img/star.png" />
+  const onClickItem = () => {
+    setModal(true);
+  };
+
+  return (
+    <>
+      {modal && (
+        <Suspense fallback={<div>Loading...</div>}>
+          <HospitalDetail hospital={hospital} setModal={setModal} />
+        </Suspense>
+      )}
+      <HospitalItemStyle onClick={onClickItem}>
+        <div className="info">
+          <h4>
+            {hospital.yadmNm} {hospital.distance}
+          </h4>
+
+          <div className="grade">
+            <div className="img">
+              <img src="/src/assets/img/star.png" />
+            </div>
+            <span>{hospital.rating}</span>
           </div>
-          <span>{hospital.grade}</span>
+
+          {hospital.rank && (
+            <div className="medal">{medal[hospital.rank - 1]}</div>
+          )}
         </div>
 
-        <span className="medal">{medal[hospital.rank - 1]}</span>
-      </div>
-
-      <div className="address">
-        <span>상세 주소</span>
-        <p>{hospital.location}</p>
-      </div>
-    </HospitalItemStyle>
+        <div className="address">
+          <span>상세 주소</span>
+          <p>{hospital.addr}</p>
+        </div>
+      </HospitalItemStyle>
+      {/* <Map /> */}
+    </>
   );
 }
 const HospitalItemStyle = styled.li`

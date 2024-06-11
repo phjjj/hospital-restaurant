@@ -4,13 +4,13 @@ import Button from "./common/Button";
 
 interface Props {
   department: Department;
-  onSelect: (id: number) => void;
-  selected: number;
+  onSelect: (department: Department) => void;
+  selected?: number;
 }
 
 function DepartmentItem({ department, onSelect, selected }: Props) {
   const handleClick = () => {
-    onSelect(department.id);
+    onSelect(department);
   };
 
   return (
