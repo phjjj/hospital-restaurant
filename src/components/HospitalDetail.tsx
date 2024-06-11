@@ -86,23 +86,22 @@ const HospitalDetailStyle = styled.div`
     gap: 12px;
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .review-title {
       display: flex;
       gap: 10px;
-      align-items: center;
     }
     .img {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       img {
         width: 100%;
         height: 100%;
       }
     }
     p {
-      font-size: 1.12rem;
+      font-size: 1rem;
     }
   }
 `;

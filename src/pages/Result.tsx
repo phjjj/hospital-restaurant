@@ -4,10 +4,7 @@ import HospitalItem from "../components/Hospitaltem";
 import Button from "../components/common/Button";
 import { Link, useLocation } from "react-router-dom";
 import { useHospitals } from "../hooks/useHospital";
-import { FormatHospital } from "../model/hospital.model";
-import { Suspense, useState } from "react";
-import Map from "../components/HospitalDetail";
-import Modal from "../components/common/Modal";
+import Loading from "../components/common/Loading";
 
 function Result() {
   const location = useLocation();
@@ -22,10 +19,7 @@ function Result() {
   if (loading) {
     return (
       <ResultStyle>
-        <Title size="small" color="primary">
-          병원 맛집
-        </Title>
-        <p>데이터를 불러오는 중입니다...</p>
+        <Loading />
       </ResultStyle>
     );
   }
