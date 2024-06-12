@@ -31,7 +31,7 @@ function Result() {
           병원 맛집
         </Title>
         <p>
-          현재 위치와 가까우면서 내과의
+          현재 위치와 가까우면서 {department.name}의
           <br />
           후기가 가장 좋은 병원입니다
         </p>
