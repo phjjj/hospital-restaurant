@@ -6,7 +6,7 @@ import { GlobalStyle } from "./style/global";
 import { ThemeProvider } from "styled-components";
 import { defaultTheme } from "./style/theme";
 import Layout from "./components/Layout/Layout";
-import { Children, useEffect } from "react";
+import { useEffect } from "react";
 import { NavermapsProvider } from "react-naver-maps";
 
 function App() {

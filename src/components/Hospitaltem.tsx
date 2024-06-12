@@ -2,7 +2,6 @@ import styled from "styled-components";
 import { FormatHospital } from "../model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
-import Loading from "./common/Loading";
 
 interface Props {
   hospital: FormatHospital;
