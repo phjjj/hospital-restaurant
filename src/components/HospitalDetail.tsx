@@ -59,50 +59,48 @@ function HospitalDetail({ setModal, hospital }: Props) {
   );
 }
 const HospitalDetailStyle = styled.div`
-  width: 100%;
+  width: 50%;
   height: 80%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
   background-color: #fff;
   padding: 20px;
   border-radius: ${({ theme }) => theme.borderRadius.default};
+  // 모바일 버전
+  @media (max-width: 868px) {
+    width: 90%;
+  }
+
   gap: 20px;
   .map {
     width: 100%;
     height: 800px;
     z-index: 100;
-
-    // 모바일 버전
-    @media (max-width: 768px) {
-      width: 100%;
-      height: 400px;
-    }
   }
   .info {
     display: flex;
     flex-direction: column;
     gap: 12px;
+    justify-content: end;
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1.2rem;
     }
     .review-title {
       display: flex;
       gap: 10px;
-      align-items: center;
     }
     .img {
-      width: 30px;
-      height: 30px;
+      width: 20px;
+      height: 20px;
       img {
         width: 100%;
         height: 100%;
       }
     }
     p {
-      font-size: 1.12rem;
+      font-size: 1rem;
     }
   }
 `;

@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FormatHospital } from "../model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
+import Loading from "./common/Loading";
 
 interface Props {
   hospital: FormatHospital;
@@ -18,7 +19,7 @@ function HospitalItem({ hospital }: Props) {
   return (
     <>
       {modal && (
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<></>}>
           <HospitalDetail hospital={hospital} setModal={setModal} />
         </Suspense>
       )}
