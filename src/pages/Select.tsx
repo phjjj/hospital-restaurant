@@ -4,6 +4,7 @@ import Button from "../components/common/Button";
 import DepartmentItem from "../components/DepartmentItem";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import selectImg from "/public/img/select.png";
 
 export interface Department {
   id: number;
@@ -57,7 +58,7 @@ function Select() {
 
       <div className="explain">
         <div className="img">
-          <img src={"/public/img/select.png"} />
+          <img src={selectImg} />
         </div>
         <h2>진료 과목을 선택해주세요.</h2>
       </div>

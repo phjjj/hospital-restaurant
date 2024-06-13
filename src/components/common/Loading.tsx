@@ -1,11 +1,11 @@
 import styled from "styled-components";
 import Title from "./Title";
-
+import LoadingImg from "../../../public/img/spinner.gif";
 function Loading() {
   return (
     <LoadingStyle>
       <div className="img">
-        <img src={"/pulbic/img/spinner.gif"} />
+        <img src={LoadingImg} />
       </div>
       <div className="loading-text">
         <Title size="small" color="primary">

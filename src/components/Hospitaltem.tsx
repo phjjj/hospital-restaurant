@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { FormatHospital } from "../model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
+import starPng from "../../public/img/star.png";
 
 interface Props {
   hospital: FormatHospital;
@@ -30,7 +31,7 @@ function HospitalItem({ hospital }: Props) {
 
           <div className="grade">
             <div className="img">
-              <img src="/public/img/star.png" />
+              <img src={starPng} />
             </div>
             <span>{hospital.rating}</span>
           </div>

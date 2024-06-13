@@ -2,6 +2,7 @@ import styled from "styled-components";
 import Title from "../components/common/Title";
 import Button from "../components/common/Button";
 import { Link } from "react-router-dom";
+import homeImg from "/public/img/home.png";
 
 function Home() {
   return (
@@ -10,7 +11,7 @@ function Home() {
         병원맛집
       </Title>
       <div className="img">
-        <img src={"/public/img/home.png"} />
+        <img src={homeImg} />
       </div>
       <Link to="/select">
         <Button size="large" schema="primary">

@@ -7,6 +7,7 @@ import {
 } from "react-naver-maps";
 import Modal from "./common/Modal";
 import { FormatHospital } from "../model/hospital.model";
+import gptImg from "/public/img/gpt.png";
 
 interface Props {
   setModal: (value: boolean) => void;
@@ -47,7 +48,7 @@ function HospitalDetail({ setModal, hospital }: Props) {
           <div>
             <div className="review-title">
               <div className="img">
-                <img src={"/public/img/gpt.png"} />
+                <img src={gptImg} />
               </div>
               <h3>GPT 의견</h3>
             </div>
