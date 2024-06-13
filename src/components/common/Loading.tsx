@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Title from "./Title";
-import LoadingImg from "../../../public/img/spinner.gif";
+import LoadingImg from "../../assets/img/spinner.gif";
+
 function Loading() {
   return (
     <LoadingStyle>

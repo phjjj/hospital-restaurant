@@ -7,7 +7,7 @@ import {
 } from "react-naver-maps";
 import Modal from "./common/Modal";
 import { FormatHospital } from "../model/hospital.model";
-import gptImg from "/public/img/gpt.png";
+import gptImg from "../assets/img/gpt.png";
 
 interface Props {
   setModal: (value: boolean) => void;
@@ -77,7 +77,6 @@ const HospitalDetailStyle = styled.div`
   .map {
     width: 100%;
     height: 800px;
-    z-index: 100;
   }
   .info {
     display: flex;

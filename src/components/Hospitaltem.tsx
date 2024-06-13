@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { FormatHospital } from "../model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
-import starPng from "../../public/img/star.png";
+import starPng from "../assets/img/star.png";
 
 interface Props {
   hospital: FormatHospital;
