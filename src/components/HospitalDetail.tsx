@@ -47,7 +47,7 @@ function HospitalDetail({ setModal, hospital }: Props) {
           <div>
             <div className="review-title">
               <div className="img">
-                <img src={"/src/assets/img/gpt.png"} />
+                <img src={"/public/img/gpt.png"} />
               </div>
               <h3>GPT 의견</h3>
             </div>

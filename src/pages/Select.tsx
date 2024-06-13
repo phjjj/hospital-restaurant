@@ -57,7 +57,7 @@ function Select() {
 
       <div className="explain">
         <div className="img">
-          <img src={"/src/assets/img/select.png"} />
+          <img src={"/public/img/select.png"} />
         </div>
         <h2>진료 과목을 선택해주세요.</h2>
       </div>

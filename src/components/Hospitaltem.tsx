@@ -30,7 +30,7 @@ function HospitalItem({ hospital }: Props) {
 
           <div className="grade">
             <div className="img">
-              <img src="/src/assets/img/star.png" />
+              <img src="/public/img/star.png" />
             </div>
             <span>{hospital.rating}</span>
           </div>

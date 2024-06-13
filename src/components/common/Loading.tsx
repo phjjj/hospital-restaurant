@@ -5,7 +5,7 @@ function Loading() {
   return (
     <LoadingStyle>
       <div className="img">
-        <img src={"/src/assets/img/spinner.gif"} />
+        <img src={"/pulbic/img/spinner.gif"} />
       </div>
       <div className="loading-text">
         <Title size="small" color="primary">

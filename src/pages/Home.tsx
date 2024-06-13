@@ -10,7 +10,7 @@ function Home() {
         병원맛집
       </Title>
       <div className="img">
-        <img src={"/src/assets/img/home.png"} />
+        <img src={"/public/img/home.png"} />
       </div>
       <Link to="/select">
         <Button size="large" schema="primary">
