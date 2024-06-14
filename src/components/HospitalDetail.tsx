@@ -76,7 +76,7 @@ const HospitalDetailStyle = styled.div`
   gap: 20px;
   .map {
     width: 100%;
-    height: 800px;
+    height: 50%;
   }
   .info {
     display: flex;
