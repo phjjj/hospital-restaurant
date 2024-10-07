@@ -7,7 +7,7 @@ import {
 } from "react-naver-maps";
 import Modal from "./common/Modal";
 import { FormatHospital } from "../model/hospital.model";
-import gptImg from "../assets/img/gpt.png";
+import gptImg from "../../public/images/gpt.png";
 
 interface Props {
   setModal: (value: boolean) => void;

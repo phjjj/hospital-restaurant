@@ -4,7 +4,7 @@ import Button from "../components/common/Button";
 import DepartmentItem from "../components/DepartmentItem";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import selectImg from "../assets/img/select.png";
+import selectImg from "../../public/images/select.png";
 
 export interface Department {
   id: number;
