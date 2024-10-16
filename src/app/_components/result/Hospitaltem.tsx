@@ -1,9 +1,10 @@
+"use client";
 import styled from "styled-components";
 import { FormatHospital } from "../../_model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
 import Image from "next/image";
-import starPng from "../../public/images/star.png";
+import starPng from "../../../../public/images/star.png";
 
 interface Props {
   hospital: FormatHospital;
@@ -32,7 +33,7 @@ function HospitalItem({ hospital }: Props) {
 
           <div className='grade'>
             <div className='img'>
-              <Image src={starPng} alt='star' />
+              <Image src={starPng} alt='star' width={20} />
             </div>
             <span>{hospital.rating}</span>
           </div>
@@ -87,9 +88,6 @@ const HospitalItemStyle = styled.li`
       .img {
         width: 20px;
         height: auto;
-        img {
-          width: 100%;
-        }
       }
     }
   }

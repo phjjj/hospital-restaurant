@@ -1,6 +1,6 @@
 "use client";
-import Title from "../components/common/Title";
-import Button from "../components/common/Button";
+import Title from "../_components/common/Title";
+import Button from "../_components/common/Button";
 import Link from "next/link";
 import homeImg from "../../../public/images/home.png";
 import Image from "next/image";

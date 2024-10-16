@@ -18,7 +18,7 @@ function DepartmentItem({ department, onSelect, selected }: Props) {
       onClick={handleClick}
       schema={selected === department.id ? "primary" : "third"}
       size='small'>
-      {department.name}
+      {department.yadmNm}
     </DepartmentItemStyle>
   );
 }

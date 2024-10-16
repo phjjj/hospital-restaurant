@@ -1,8 +1,8 @@
 import OpenAI from "openai";
-import { FormatHospital } from "../model/hospital.model";
+import { FormatHospital } from "../_model/hospital.model";
 
 const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
+  apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
   dangerouslyAllowBrowser: true,
 });
 
@@ -11,9 +11,9 @@ export const getRanking = async (hospitals: FormatHospital[]) => {
     "다음 병원들에 대해 5점 만점의 평점과 짧은 리뷰를 한글로 제공해 주세요. 결과는 병원 이름을 키로 사용하는 JSON 형식으로 반환해 주세요:\n\n";
 
   hospitals.forEach((hospital, index) => {
-    prompt += `병원 ${index + 1}:\n이름: ${hospital.yadmNm}\n주소: ${hospital.addr}\n전화번호: ${
-      hospital.telno
-    }\n총 의사 수: ${hospital.drTotCnt}\n\n`;
+    prompt += `병원 ${index + 1}:\n이름: ${hospital.yadmNm}\n주소: ${
+      hospital.addr
+    }\n전화번호: ${hospital.telno}\n총 의사 수: ${hospital.drTotCnt}\n\n`;
   });
 
   prompt += "\n결과는 다음과 같은 JSON 형식으로 반환해 주세요:\n";

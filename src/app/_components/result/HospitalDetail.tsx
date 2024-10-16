@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import {
   Container as MapDiv,
@@ -7,7 +8,7 @@ import {
 } from "react-naver-maps";
 import Modal from "../common/Modal";
 import { FormatHospital } from "../../_model/hospital.model";
-import gptImg from "../../public/images/gpt.png";
+import gptImg from "../../../../public/images/gpt.png";
 import Image from "next/image";
 
 interface Props {
