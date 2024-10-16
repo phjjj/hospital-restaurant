@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import { Department } from "../pages/Select";
-import Button from "./common/Button";
+import { Department } from "../../select/page";
+import Button from "../common/Button";
 
 interface Props {
   department: Department;
@@ -14,7 +14,10 @@ function DepartmentItem({ department, onSelect, selected }: Props) {
   };
 
   return (
-    <DepartmentItemStyle onClick={handleClick} schema={selected === department.id ? "primary" : "third"} size="small">
+    <DepartmentItemStyle
+      onClick={handleClick}
+      schema={selected === department.id ? "primary" : "third"}
+      size='small'>
       {department.name}
     </DepartmentItemStyle>
   );

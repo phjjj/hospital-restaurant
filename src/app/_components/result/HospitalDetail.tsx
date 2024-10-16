@@ -5,9 +5,10 @@ import {
   NaverMap,
   useNavermaps,
 } from "react-naver-maps";
-import Modal from "./common/Modal";
-import { FormatHospital } from "../model/hospital.model";
+import Modal from "../common/Modal";
+import { FormatHospital } from "../../_model/hospital.model";
 import gptImg from "../../public/images/gpt.png";
+import Image from "next/image";
 
 interface Props {
   setModal: (value: boolean) => void;
@@ -20,7 +21,7 @@ function HospitalDetail({ setModal, hospital }: Props) {
   return (
     <Modal setModal={setModal}>
       <HospitalDetailStyle>
-        <div className="map">
+        <div className='map'>
           <MapDiv
             style={{
               width: "100%",
@@ -38,7 +39,7 @@ function HospitalDetail({ setModal, hospital }: Props) {
           </MapDiv>
         </div>
 
-        <div className="info">
+        <div className='info'>
           <div>
             <h3>병원 정보</h3>
             <p>{hospital.yadmNm}</p>
@@ -46,9 +47,9 @@ function HospitalDetail({ setModal, hospital }: Props) {
             <p>{hospital.telno}</p>
           </div>
           <div>
-            <div className="review-title">
-              <div className="img">
-                <img src={gptImg} />
+            <div className='review-title'>
+              <div className='img'>
+                <Image src={gptImg} alt='gpt' />
               </div>
               <h3>GPT 의견</h3>
             </div>

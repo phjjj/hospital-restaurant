@@ -1,7 +1,8 @@
 import styled from "styled-components";
-import { FormatHospital } from "../model/hospital.model";
+import { FormatHospital } from "../../_model/hospital.model";
 import HospitalDetail from "./HospitalDetail";
 import { Suspense, useState } from "react";
+import Image from "next/image";
 import starPng from "../../public/images/star.png";
 
 interface Props {
@@ -24,24 +25,24 @@ function HospitalItem({ hospital }: Props) {
         </Suspense>
       )}
       <HospitalItemStyle onClick={onClickItem}>
-        <div className="info">
+        <div className='info'>
           <h4>
             {hospital.yadmNm} {hospital.distance}
           </h4>
 
-          <div className="grade">
-            <div className="img">
-              <img src={starPng} />
+          <div className='grade'>
+            <div className='img'>
+              <Image src={starPng} alt='star' />
             </div>
             <span>{hospital.rating}</span>
           </div>
 
           {hospital.rank && (
-            <div className="medal">{medal[hospital.rank - 1]}</div>
+            <div className='medal'>{medal[hospital.rank - 1]}</div>
           )}
         </div>
 
-        <div className="address">
+        <div className='address'>
           <span>상세 주소</span>
           <p>{hospital.addr}</p>
         </div>

@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { ButtonSchema } from "../../style/theme";
 
@@ -20,7 +21,8 @@ export const ButtonStyle = styled.button<Omit<Props, "children">>`
   font-size: ${({ size, theme }) => theme.button[size].fontSize};
   padding: ${({ size, theme }) => theme.button[size].padding};
   color: ${({ schema, theme }) => theme.buttonSchema[schema].color};
-  background-color: ${({ schema, theme }) => theme.buttonSchema[schema].backgroundColor};
+  background-color: ${({ schema, theme }) =>
+    theme.buttonSchema[schema].backgroundColor};
   border: none;
   border-radius: ${({ theme }) => theme.borderRadius.default};
   cursor: ${({ disabled }) => (disabled ? "not-allowed" : "pointer")};

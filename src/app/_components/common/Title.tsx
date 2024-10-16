@@ -1,3 +1,4 @@
+"use client";
 import styled from "styled-components";
 import { ColorKey } from "../../style/theme";
 
@@ -14,8 +15,9 @@ function Title({ children, size, color }: Props) {
     </TitleStyle>
   );
 }
+
 const TitleStyle = styled.h1<Omit<Props, "children">>`
-  font-size: ${({ size, theme }) => theme.heading[size].fontSize};
+  font-size: ${({ size, theme }) => theme.heading[size]?.fontSize};
   color: ${({ color, theme }) => theme.colors[color]};
 `;
 

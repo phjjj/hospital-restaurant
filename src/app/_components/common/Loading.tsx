@@ -1,15 +1,16 @@
 import styled from "styled-components";
 import Title from "./Title";
 import LoadingImg from "../../../public/images/spinner.gif";
+import Image from "next/image";
 
 function Loading() {
   return (
     <LoadingStyle>
-      <div className="img">
-        <img src={LoadingImg} />
+      <div className='img'>
+        <Image src={LoadingImg} alt='loading' />
       </div>
-      <div className="loading-text">
-        <Title size="small" color="primary">
+      <div className='loading-text'>
+        <Title size='small' color='primary'>
           병원 맛집
         </Title>
         <p>데이터를 불러오는 중입니다...</p>
