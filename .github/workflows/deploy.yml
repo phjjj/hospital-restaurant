@@ -34,6 +34,9 @@ jobs:
   deploy-production:
     runs-on: ubuntu-latest
     needs: cypress-run # Cypress 테스트가 성공적으로 완료된 후 배포 실행
+    env:
+      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
     steps:
       - uses: actions/checkout@v2
 
