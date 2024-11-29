@@ -9,7 +9,6 @@ export const getHospitals = async (
   dgsbjtCd?: string,
 ) => {
   const { latitude, longitude } = useLocationStore();
-  console.log(latitude, longitude);
 
   let url = `${process.env.NEXT_PUBLIC_SERVICE_URL}?serviceKey=${process.env.NEXT_PUBLIC_SERVICE_KEY}&yadmNm=${yadmNm}&pageNo=1&numOfRows=10&xPos=${longitude}&yPos=${latitude}&radius=20000`;
 
