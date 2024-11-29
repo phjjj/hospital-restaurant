@@ -3,15 +3,12 @@ describe("홈 화면", () => {
   it("홈 화면이 렌더링", () => {
     cy.visit("/");
   });
-});
-describe("홈 화면 이미지", () => {
+
   it("홈 화면에 이미지가 렌더링", () => {
     cy.visit("/");
     cy.get(".img img").should("be.visible");
   });
-});
 
-describe("홈 화면 버튼", () => {
   it("홈 화면에 시작하기 버튼이 렌더링", () => {
     cy.visit("/");
     cy.get("button").should("have.text", "시작하기");
@@ -34,7 +31,7 @@ describe("진료 선택 화면", () => {
     cy.get("h2").should("have.text", "진료 과목을 선택해주세요.");
   });
 
-  it("진료 선택 버튼 렌더링", () => {
+  it("진료 과목 selector들 렌더링", () => {
     cy.visit("/select");
     Object.values(departments).forEach((department) => {
       cy.contains("button", department.yadmNm).should("be.visible");
@@ -58,7 +55,7 @@ describe("결과 화면", () => {
         url: "https://apis.data.go.kr/B551182/hospInfoServicev2/getHospBasisList**",
       },
       { fixture: "hospitals.json" },
-    ).as("getHospitals");
+    ).as("getHospitals"); // as는
 
     cy.intercept(
       {
@@ -76,7 +73,7 @@ describe("결과 화면", () => {
     });
 
     cy.visit("/result/0");
-    cy.wait(["@getHospitals", "@getRanking"]);
+    cy.wait(["@getHospitals", "@getRanking"]); //
 
     cy.get("h1").should("have.text", "병원 맛집");
     cy.get("p").should(
