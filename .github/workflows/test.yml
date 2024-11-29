@@ -1,40 +1,18 @@
-name: CI
+name: Cypress Tests
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
 
 jobs:
   cypress-run:
-    runs-on: ubuntu-latest
-
+    runs-on: ubuntu-22.04
     steps:
-      # 1. Git 체크아웃
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # 2. Node.js 설치
-      - name: Setup Node.js
-        uses: actions/setup-node@v3
+      - name: Checkout
+        uses: actions/checkout@v4
+      # Install npm dependencies, cache them correctly
+      # and run all Cypress tests
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
         with:
-          node-version: 18 # 프로젝트에 사용하는 Node.js 버전
-
-      # 3. 종속성 설치
-      - name: Install dependencies
-        run: npm install
-
-      # 4. 애플리케이션 빌드 (필요한 경우)
-      - name: Build application
-        run: npm run build
-
-      # 5. Cypress 테스트 실행
-      - name: Run Cypress tests
-        uses: cypress-io/github-action@v5
-        with:
-          start: npm start # 개발 서버 시작 명령어
-          wait-on: "http://localhost:3001" # 서버가 올라올 때까지 대기
-          browser: chrome # 실행할 브라우저
+          build: npm run build
+          start: npm start
+          browser: chrome
